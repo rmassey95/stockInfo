@@ -26,6 +26,12 @@ app.get('/search', (req, res) => {
     res.render('pages/search');
 })
 
+app.get('/company', (req, res) => {
+    const { company } = req.query;
+    console.log(company);
+    res.send('SUCCESS');
+})
+
 //create main page    
 app.get('/', (req, res) => {
     res.send('HOME');
