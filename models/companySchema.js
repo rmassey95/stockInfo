@@ -13,6 +13,18 @@ const companySchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    companyDesc: {
+        type: String,
+        required: true
+    },
+    industry: {
+        type: String,
+        required: true
+    },
+    sector: {
+        type: String,
+        required: true
+    },
     marketInfo: {
         priceToEarnings: Number,
         stockPrice: Number,

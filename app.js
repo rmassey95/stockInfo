@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
+const Company = require('./models/companySchema');
+
 const app = express();
 
 //connect to MongoDB
@@ -22,8 +24,9 @@ mongoose.connect('mongodb://localhost/financeDB', {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/companies', (req, res) => {
-    res.render('pages/companyList');
+app.get('/companies', async (req, res) => {
+    const companies = await Company.find({});
+    res.render('pages/companyList', { companies });
 });
 
 //create main page    
