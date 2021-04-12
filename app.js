@@ -22,20 +22,14 @@ mongoose.connect('mongodb://localhost/financeDB', {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/search', (req, res) => {
-    res.render('pages/search');
-})
-
-app.get('/company', (req, res) => {
-    const { company } = req.query;
-    console.log(company);
-    res.send('SUCCESS');
-})
+app.get('/companies', (req, res) => {
+    res.render('pages/companyList');
+});
 
 //create main page    
 app.get('/', (req, res) => {
     res.send('HOME');
-})
+});
 
 //connect to specified port
 const port = 3000;
