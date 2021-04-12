@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Companies</title>
+
+    <!--BOOTSTRAP CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center my-3">
+            <h1>
+                <%=company.name%>
+            </h1>
+        </div>
+        <div class="card">
+            <h5 class="card-header">Market Information</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    P/E: <%=company.marketInfo.priceToEarnings%>
+                </p>
+                <p class="card-text">
+                    Stock Price: <%=company.marketInfo.stockPrice%>
+                </p>
+                <p class="card-text">
+                    Market Cap: <%=company.marketInfo.marketCap%>
+                </p>
+                <p class="card-text">
+                    52-wk high: <%=company.marketInfo.yearHigh%>
+                </p>
+                <p class="card-text">
+                    52-wk low: <%=company.marketInfo.yearLow%>
+                </p>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <h5 class="card-header">Valuation Metrics</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    Asset Turnover Ratio: <%=company.quantInfo.assetTurnover%>
+                </p>
+                <p class="card-text">
+                    Debt to Equity Ratio: <%=company.quantInfo.debtToEquityRatio%>
+                </p>
+                <p class="card-text">
+                    Current Ratio: <%=company.quantInfo.currentRatio%>x
+                </p>
+                <p class="card-text">
+                    Gross Margin: <%=company.quantInfo.grossMargin%>%
+                </p>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <h5 class="card-header">Qualitative Information</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    Outside Analysis:
+                    <%=console.log(company.qualitativeInfo.links.length)%>
+                        <%for(let i=0; i<company.qualitativeInfo.links.length; i++){%>
+                            <br>
+                            <a href="<%=company.qualitativeInfo.links[i]%>">
+                                <%=company.qualitativeInfo.links[i]%>
+                            </a>
+                            <%}%>
+                </p>
+                <p class="card-text">
+                    <b>Management Information: </b>
+                    <%=company.qualitativeInfo.mgmtInfo%>
+                </p>
+                <p class="card-text">
+                    <b>Thoughts:</b>
+                    <%=company.qualitativeInfo.conclusion%>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--BOOTSTRAP JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

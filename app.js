@@ -29,6 +29,14 @@ app.get('/companies', async (req, res) => {
     res.render('pages/companyList', { companies });
 });
 
+app.get('/company/:id', async (req, res) => {
+    const { id } = req.params;
+    console.log(id);
+    const company = await Company.findById(id);
+    console.log(company);
+    res.render('pages/companyPage', { company });
+})
+
 //create main page    
 app.get('/', (req, res) => {
     res.send('HOME');
