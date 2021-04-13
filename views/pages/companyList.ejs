@@ -14,7 +14,14 @@
 
 <body>
     <div class="container">
-        <h1 class="my-4">Companies:</h1>
+        <div class="row">
+            <h1 class="my-4 text-center">Companies List</h1>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-outline-primary mb-2" href="/company/add" role="button">Add Company</a>
+            </div>
+        </div>
         <div class="card">
             <div class="card-header">
                 <a href="/company/<%=companies[0]._id%>" class="text-decoration-none fs-5">

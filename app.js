@@ -24,11 +24,18 @@ mongoose.connect('mongodb://localhost/financeDB', {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
+//company list, shows all the companies in the database
 app.get('/companies', async (req, res) => {
     const companies = await Company.find({});
     res.render('pages/companyList', { companies });
 });
 
+//create page for adding a new company
+app.get('/company/add', (req, res) => {
+    res.render('pages/companyAdd');
+})
+
+//displays information on the selected company
 app.get('/company/:id', async (req, res) => {
     const { id } = req.params;
     console.log(id);

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Company</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-3 text-center">Add a Company</h1>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text">Company Name and Ticker</span>
+                <input type="text" id="name" aria-label="Name" class="form-control">
+                <input type="text" id="stockTicker" aria-label="Stock Ticker" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text" id="companyDesc">Description</span>
+                <input type="text" class="form-control" aria-label="company description" aria-describedby="companyDesc">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text" id="industry">Industry</span>
+                <input type="text" class="form-control" aria-label="company industry" aria-describedby="industry">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text" id="sector">Sector</span>
+                <input type="text" class="form-control" aria-label="company sector" aria-describedby="sector">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="priceToEarnings">P/E ratio</span>
+                    <input type="text" class="form-control" aria-label="P/E ratio" aria-describedby="priceToEarnings">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="stockPrice">Stock Price</span>
+                    <input type="text" class="form-control" aria-label="Stock Price" aria-describedby="stockPrice">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="marketCap">Market Cap</span>
+                    <input type="text" class="form-control" aria-label="Market Cap" aria-describedby="marketCap">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="yearHigh">52-wk high</span>
+                    <input type="text" class="form-control" aria-label="52-wk high" aria-describedby="yearHigh">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="yearLow">52-wk low</span>
+                    <input type="text" class="form-control" aria-label="52-wk low" aria-describedby="yearLow">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="assetTurnover">Asset Turnover Ratio</span>
+                    <input type="text" class="form-control" aria-label="Asset Turnover Ratio"
+                        aria-describedby="assetTurnover">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="debtToEquityRatio">Debt to Equity Ratio</span>
+                    <input type="text" class="form-control" aria-label="Debt to Equity Ratio"
+                        aria-describedby="debtToEquityRatio">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="currentRatio">Current Ratio</span>
+                    <input type="text" class="form-control" aria-label="Current Ratio" aria-describedby="currentRatio">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="grossMargin">Gross Margin</span>
+                    <input type="text" class="form-control" aria-label="Gross Margin" aria-describedby="grossMargin">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text">Management Information</span>
+                <textarea id="mgmtInfo" class="form-control" aria-label="Management Information"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mt-3">
+                <span class="input-group-text">Personal Analysis</span>
+                <textarea id="conclusion" class="form-control" aria-label="Conclusion"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
