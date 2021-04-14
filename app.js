@@ -40,11 +40,9 @@ app.get('/company/add', (req, res) => {
 
 //add company information to database
 app.post('/companies', async (req, res) => {
-    console.dir(req.body);
     const company = new Company(req.body.company);
-    console.log(company);
     await company.save();
-    res.send('ADDING');
+    res.redirect('pages/companyList');
 })
 
 //displays information on the selected company

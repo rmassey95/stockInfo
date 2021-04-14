@@ -22,21 +22,24 @@
                 <a class="btn btn-outline-primary mb-2" href="/company/add" role="button">Add Company</a>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header">
-                <a href="/company/<%=companies[0]._id%>" class="text-decoration-none fs-5">
-                    <%=companies[0].name%>
-                </a>
-            </div>
+        <%for(const company of companies){%>
 
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">Sector: <%=companies[0].sector%>
-                </h6>
-                <p class="card-text">
-                    <%=companies[0].companyDesc%>
-                </p>
+            <div class="card mt-3">
+                <div class="card-header">
+                    <a href="/company/<%=company._id%>" class="text-decoration-none fs-5">
+                        <%=company.name%>
+                    </a>
+                </div>
+
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Sector: <%=company.sector%>
+                    </h6>
+                    <p class="card-text">
+                        <%=company.companyDesc%>
+                    </p>
+                </div>
             </div>
-        </div>
+            <%}%>
     </div>
     <!--BOOTSTRAP JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
