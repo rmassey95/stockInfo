@@ -24,6 +24,9 @@ mongoose.connect('mongodb://localhost/financeDB', {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
+//data parser middleware
+app.use(express.urlencoded({ extended: true }));
+
 //company list, shows all the companies in the database
 app.get('/companies', async (req, res) => {
     const companies = await Company.find({});
@@ -33,6 +36,15 @@ app.get('/companies', async (req, res) => {
 //create page for adding a new company
 app.get('/company/add', (req, res) => {
     res.render('pages/companyAdd');
+})
+
+//add company information to database
+app.post('/companies', async (req, res) => {
+    console.dir(req.body);
+    const company = new Company(req.body.company);
+    console.log(company);
+    await company.save();
+    res.send('ADDING');
 })
 
 //displays information on the selected company
