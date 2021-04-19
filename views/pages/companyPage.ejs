@@ -61,13 +61,12 @@
             <div class="card-body">
                 <p class="card-text">
                     Outside Analysis:
-                    <%=console.log(company.qualitativeInfo.links.length)%>
-                        <%for(let i=0; i<company.qualitativeInfo.links.length; i++){%>
-                            <br>
-                            <a href="<%=company.qualitativeInfo.links[i]%>">
-                                <%=company.qualitativeInfo.links[i]%>
-                            </a>
-                            <%}%>
+                    <%for(let i=0; i<company.qualitativeInfo.links.length; i++){%>
+                        <br>
+                        <a href="<%=company.qualitativeInfo.links[i]%>">
+                            <%=company.qualitativeInfo.links[i]%>
+                        </a>
+                        <%}%>
                 </p>
                 <p class="card-text">
                     <b>Management Information: </b>
@@ -77,6 +76,12 @@
                     <b>Thoughts:</b>
                     <%=company.qualitativeInfo.conclusion%>
                 </p>
+            </div>
+        </div>
+        <div class="row text-center my-3">
+            <div class="col-4 d-grid mx-auto">
+                <a type="button" href="/company/edit/<%=company._id%>" class="btn btn-outline-primary">Edit
+                    Company</a>
             </div>
         </div>
     </div>

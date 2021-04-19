@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="mt-3 text-center">Edit <%=company.name%>
+        </h1>
+        <form action="/company/<%=company._id%>?_method=PUT" method="POST">
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text">Company Name and Ticker</span>
+                    <input type="text" id="name" aria-label="Name" class="form-control" name="company[name]"
+                        value="<%=company.name%>">
+                    <input type="text" id="stockTicker" aria-label="Stock Ticker" class="form-control"
+                        name="company[stockTicker]" value="<%=company.stockTicker%>">
+                </div>
+            </div>
+
+            <div class=" row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="companyDesc">Description</span>
+                    <input type="text" class="form-control" aria-label="company description"
+                        aria-describedby="companyDesc" name="company[companyDesc]" value="<%=company.companyDesc%>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="industry">Industry</span>
+                    <input type="text" class="form-control" aria-label="company industry" aria-describedby="industry"
+                        name="company[industry]" value="<%=company.industry%>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="sector">Sector</span>
+                    <input type="text" class="form-control" aria-label="company sector" aria-describedby="sector"
+                        name="company[sector]" value="<%=company.sector%>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="priceToEarnings">P/E ratio</span>
+                        <input type="number" step="any" class="form-control" aria-label="P/E ratio"
+                            aria-describedby="priceToEarnings" name="company[marketInfo][priceToEarnings]"
+                            value="<%=company.marketInfo.priceToEarnings%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="stockPrice">Stock Price</span>
+                        <input type="number" step="any" class="form-control" aria-label="Stock Price"
+                            aria-describedby="stockPrice" name="company[marketInfo][stockPrice]"
+                            value="<%=company.marketInfo.stockPrice%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="marketCap">Market Cap</span>
+                        <input type="number" step="any" class="form-control" aria-label="Market Cap"
+                            aria-describedby="marketCap" name="company[marketInfo][marketCap]"
+                            value="<%=company.marketInfo.marketCap%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="yearHigh">52-wk high</span>
+                        <input type="number" step="any" class="form-control" aria-label="52-wk high"
+                            aria-describedby="yearHigh" name="company[marketInfo][yearHigh]"
+                            value="<%=company.marketInfo.yearHigh%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="yearLow">52-wk low</span>
+                        <input type="number" step="any" class="form-control" aria-label="52-wk low"
+                            aria-describedby="yearLow" name="company[marketInfo][yearLow]"
+                            value="<%=company.marketInfo.yearLow%>">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="assetTurnover">Asset Turnover Ratio</span>
+                        <input type="number" step="any" class="form-control" aria-label="Asset Turnover Ratio"
+                            aria-describedby="assetTurnover" name="company[quantInfo][assetTurnover]"
+                            value="<%=company.quantInfo.assetTurnover%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="debtToEquityRatio">Debt to Equity Ratio</span>
+                        <input type="number" step="any" class="form-control" aria-label="Debt to Equity Ratio"
+                            aria-describedby="debtToEquityRatio" name="company[quantInfo][debtToEquityRatio]"
+                            value="<%=company.quantInfo.debtToEquityRatio%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="currentRatio">Current Ratio</span>
+                        <input type="number" step="any" class="form-control" aria-label="Current Ratio"
+                            aria-describedby="currentRatio" name="company[quantInfo][currentRatio]"
+                            value="<%=company.quantInfo.currentRatio%>">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text" id="grossMargin">Gross Margin</span>
+                        <input type="number" step="any" class="form-control" aria-label="Gross Margin"
+                            aria-describedby="grossMargin" name="company[quantInfo][grossMargin]"
+                            value="<%=company.quantInfo.grossMargin%>">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text">Management Information</span>
+                    <textarea id="mgmtInfo" class="form-control" aria-label="Management Information"
+                        name="company[qualitativeInfo][mgmtInfo]"><%=company.qualitativeInfo.mgmtInfo%></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text">Personal Analysis</span>
+                    <textarea id="conclusion" class="form-control" aria-label="Conclusion"
+                        name="company[qualitativeInfo][conclusion]"><%=company.qualitativeInfo.conclusion%></textarea>
+                </div>
+            </div>
+            <button type="submit" class="mt-3 btn btn-outline-primary">Update</button>
+        </form>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
