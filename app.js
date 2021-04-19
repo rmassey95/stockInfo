@@ -4,7 +4,7 @@ const path = require('path');
 const Company = require('./models/companySchema');
 const methodOverride = require('method-override');
 const { restart } = require('nodemon');
-const { findByIdAndUpdate } = require('./models/companySchema');
+const { findByIdAndUpdate, findByIdAndDelete } = require('./models/companySchema');
 
 const app = express();
 
@@ -54,7 +54,7 @@ app.get('/company/edit/:id', async (req, res) => {
 app.post('/companies', async (req, res) => {
     const company = new Company(req.body.company);
     await company.save();
-    res.redirect('pages/companyList');
+    res.redirect('/companies');
 })
 
 //displays information on the selected company
@@ -69,6 +69,12 @@ app.put('/company/:id', async (req, res) => {
     const { id } = req.params;
     await Company.findByIdAndUpdate(id, req.body.company);
     res.redirect(`/company/${id}`);
+})
+
+app.delete('/company/:id', async (req, res) => {
+    const { id } = req.params;
+    await Company.findByIdAndDelete(id);
+    res.redirect('/companies');
 })
 
 //create main page    

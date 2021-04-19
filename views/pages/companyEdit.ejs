@@ -16,6 +16,12 @@
 
         <h1 class="mt-3 text-center">Edit <%=company.name%>
         </h1>
+        <div class="row">
+            <div class="col">
+                <a type="button" href="/company/<%=company._id%>" class="btn btn-outline-primary">Back to
+                    <%=company.name%> page</a>
+            </div>
+        </div>
         <form action="/company/<%=company._id%>?_method=PUT" method="POST">
             <div class="row">
                 <div class="input-group mt-3">
