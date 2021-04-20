@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col">
                 <a type="button" href="/company/<%=company._id%>" class="btn btn-outline-primary">Back to
-                    <%=company.name%> page</a>
+                    <%=company.name%> page
+                </a>
             </div>
         </div>
         <form action="/company/<%=company._id%>?_method=PUT" method="POST">
@@ -40,6 +41,22 @@
                         aria-describedby="companyDesc" name="company[companyDesc]" value="<%=company.companyDesc%>">
                 </div>
             </div>
+
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="sector">Sector</span>
+                    <input type="text" class="form-control" aria-label="company sector" aria-describedby="sector"
+                        name="company[sector]" value="<%=company.sector%>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group mt-3">
+                    <span class="input-group-text" id="industryGroup">Industry Group</span>
+                    <input type="text" class="form-control" aria-label="company industry group"
+                        aria-describedby="industryGroup" name="company[industryGroup]"
+                        value="<%=company.industryGroup%>">
+                </div>
+            </div>
             <div class="row">
                 <div class="input-group mt-3">
                     <span class="input-group-text" id="industry">Industry</span>
@@ -49,85 +66,9 @@
             </div>
             <div class="row">
                 <div class="input-group mt-3">
-                    <span class="input-group-text" id="sector">Sector</span>
-                    <input type="text" class="form-control" aria-label="company sector" aria-describedby="sector"
-                        name="company[sector]" value="<%=company.sector%>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="priceToEarnings">P/E ratio</span>
-                        <input type="number" step="any" class="form-control" aria-label="P/E ratio"
-                            aria-describedby="priceToEarnings" name="company[marketInfo][priceToEarnings]"
-                            value="<%=company.marketInfo.priceToEarnings%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="stockPrice">Stock Price</span>
-                        <input type="number" step="any" class="form-control" aria-label="Stock Price"
-                            aria-describedby="stockPrice" name="company[marketInfo][stockPrice]"
-                            value="<%=company.marketInfo.stockPrice%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="marketCap">Market Cap</span>
-                        <input type="number" step="any" class="form-control" aria-label="Market Cap"
-                            aria-describedby="marketCap" name="company[marketInfo][marketCap]"
-                            value="<%=company.marketInfo.marketCap%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="yearHigh">52-wk high</span>
-                        <input type="number" step="any" class="form-control" aria-label="52-wk high"
-                            aria-describedby="yearHigh" name="company[marketInfo][yearHigh]"
-                            value="<%=company.marketInfo.yearHigh%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="yearLow">52-wk low</span>
-                        <input type="number" step="any" class="form-control" aria-label="52-wk low"
-                            aria-describedby="yearLow" name="company[marketInfo][yearLow]"
-                            value="<%=company.marketInfo.yearLow%>">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="assetTurnover">Asset Turnover Ratio</span>
-                        <input type="number" step="any" class="form-control" aria-label="Asset Turnover Ratio"
-                            aria-describedby="assetTurnover" name="company[quantInfo][assetTurnover]"
-                            value="<%=company.quantInfo.assetTurnover%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="debtToEquityRatio">Debt to Equity Ratio</span>
-                        <input type="number" step="any" class="form-control" aria-label="Debt to Equity Ratio"
-                            aria-describedby="debtToEquityRatio" name="company[quantInfo][debtToEquityRatio]"
-                            value="<%=company.quantInfo.debtToEquityRatio%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="currentRatio">Current Ratio</span>
-                        <input type="number" step="any" class="form-control" aria-label="Current Ratio"
-                            aria-describedby="currentRatio" name="company[quantInfo][currentRatio]"
-                            value="<%=company.quantInfo.currentRatio%>">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group mt-3">
-                        <span class="input-group-text" id="grossMargin">Gross Margin</span>
-                        <input type="number" step="any" class="form-control" aria-label="Gross Margin"
-                            aria-describedby="grossMargin" name="company[quantInfo][grossMargin]"
-                            value="<%=company.quantInfo.grossMargin%>">
-                    </div>
+                    <span class="input-group-text" id="subindustry">Subindustry</span>
+                    <input type="text" class="form-control" aria-label="company subindustry"
+                        aria-describedby="subindustry" name="company[subindustry]" value="<%=company.subindustry%>">
                 </div>
             </div>
             <div class="row">

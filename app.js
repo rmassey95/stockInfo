@@ -38,6 +38,13 @@ app.get('/companies', async (req, res) => {
     res.render('pages/companyList', { companies });
 });
 
+//list of companies by specified sector
+app.get('/companies/:sector', async (req, res) => {
+    const { sector } = req.params;
+    const companies = await Company.find({ sector });
+    res.render('pages/companyList', { companies });
+});
+
 //create page for adding a new company
 app.get('/company/add', (req, res) => {
     res.render('pages/companyAdd');

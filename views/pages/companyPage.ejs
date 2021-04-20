@@ -24,55 +24,32 @@
                 <a type="button" href="/companies" class="btn btn-outline-primary">All Companies</a>
             </div>
         </div>
-        <div class="card">
-            <h5 class="card-header">Market Information</h5>
-            <div class="card-body">
-                <p class="card-text">
-                    P/E: <%=company.marketInfo.priceToEarnings%>
-                </p>
-                <p class="card-text">
-                    Stock Price: <%=company.marketInfo.stockPrice%>
-                </p>
-                <p class="card-text">
-                    Market Cap: <%=company.marketInfo.marketCap%>
-                </p>
-                <p class="card-text">
-                    52-wk high: <%=company.marketInfo.yearHigh%>
-                </p>
-                <p class="card-text">
-                    52-wk low: <%=company.marketInfo.yearLow%>
-                </p>
-            </div>
-        </div>
         <div class="card mt-3">
-            <h5 class="card-header">Valuation Metrics</h5>
+            <h5 class="card-header">Company Information</h5>
             <div class="card-body">
                 <p class="card-text">
-                    Asset Turnover Ratio: <%=company.quantInfo.assetTurnover%>
+                    <b>Stock Ticker:</b>
+                    <%=company.stockTicker%>
                 </p>
                 <p class="card-text">
-                    Debt to Equity Ratio: <%=company.quantInfo.debtToEquityRatio%>
+                    <b>Sector:</b>
+                    <a href="/companies/<%=company.sector%>">
+                        <%=company.sector%>
+                    </a>
                 </p>
                 <p class="card-text">
-                    Current Ratio: <%=company.quantInfo.currentRatio%>x
+                    <b>Subindustry:</b>
+                    <%=company.subindustry%>
                 </p>
                 <p class="card-text">
-                    Gross Margin: <%=company.quantInfo.grossMargin%>%
+                    <b>Company Description:</b>
+                    <%=company.companyDesc%>
                 </p>
             </div>
         </div>
         <div class="card mt-3">
             <h5 class="card-header">Qualitative Information</h5>
             <div class="card-body">
-                <p class="card-text">
-                    Outside Analysis:
-                    <%for(let i=0; i<company.qualitativeInfo.links.length; i++){%>
-                        <br>
-                        <a href="<%=company.qualitativeInfo.links[i]%>">
-                            <%=company.qualitativeInfo.links[i]%>
-                        </a>
-                        <%}%>
-                </p>
                 <p class="card-text">
                     <b>Management Information: </b>
                     <%=company.qualitativeInfo.mgmtInfo%>
