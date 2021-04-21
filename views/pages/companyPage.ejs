@@ -28,8 +28,20 @@
             <h5 class="card-header">Company Information</h5>
             <div class="card-body">
                 <p class="card-text">
+                    <b>Stock Price:</b>
+                    <%=stockInfo['05. price']%> as of <%=stockInfo['07. latest trading day']%>
+                </p>
+                <p class="card-text">
+                    <b>Previous Close:</b>
+                    <%=stockInfo['08. previous close']%>
+                </p>
+                <p class="card-text">
+                    <b>Volume:</b>
+                    <%=stockInfo['06. volume']%>
+                </p>
+                <p class="card-text">
                     <b>Stock Ticker:</b>
-                    <%=company.stockTicker%>
+                    <%=company.stockTicker.toUpperCase()%>
                 </p>
                 <p class="card-text">
                     <b>Sector:</b>

@@ -3,8 +3,7 @@ const express = require('express');
 const path = require('path');
 const Company = require('./models/companySchema');
 const methodOverride = require('method-override');
-const { restart } = require('nodemon');
-const { findByIdAndUpdate, findByIdAndDelete } = require('./models/companySchema');
+const axios = require('axios');
 
 const app = express();
 
@@ -31,6 +30,18 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: true }));
 //override method, allows use of put and delete for forms
 app.use(methodOverride('_method'))
+
+/* TESTING FUCNTIONS HERE MOVE TO NEW FILE */
+const getStockInfo = async () => {
+    try {
+        //REPLACE SYMBOL AND APIKEY
+        const symbol = "IBM";
+        const res = await axios.get(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=demo`)
+        return res.data['Global Quote'];
+    } catch (e) {
+        return e;
+    }
+}
 
 //company list, shows all the companies in the database
 app.get('/companies', async (req, res) => {
@@ -68,7 +79,8 @@ app.post('/companies', async (req, res) => {
 app.get('/company/:id', async (req, res) => {
     const { id } = req.params;
     const company = await Company.findById(id);
-    res.render('pages/companyPage', { company });
+    const stockInfo = await getStockInfo();
+    res.render('pages/companyPage', { company, stockInfo });
 })
 
 //updates company with new edits
@@ -78,6 +90,7 @@ app.put('/company/:id', async (req, res) => {
     res.redirect(`/company/${id}`);
 })
 
+//delete a company
 app.delete('/company/:id', async (req, res) => {
     const { id } = req.params;
     await Company.findByIdAndDelete(id);
